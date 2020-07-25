@@ -22,7 +22,11 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<<<<<<< HEAD
 <title>hubtest</title>
+=======
+<title>hub test</title>
+>>>>>>> refs/heads/test
 </head>
 <body>
 <%
