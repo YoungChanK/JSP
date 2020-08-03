@@ -50,7 +50,20 @@
 					<td>성별</td>
 					<td>남<input type = "radio" name ="gender" value="1" checked="checked">
 						여<input type = "radio" name ="gender" value="2"></td>
-			
+				</tr>
+				<tr>
+					<td>생년월일</td>
+					<td><input name ="birthday" size="6">ex)931220</td>
+					<td>생년월일을 적어주세요</td>
+				</tr>
+				<tr>
+					<td>Email</td>
+					<td><input type="text" name ="email" size="30"></td>
+				</tr>
+				<tr>
+					<td>우편번호</td>
+					<td><input type="text" name ="zipcode" size="5" readonly>
+						<input type="button" value="우편번호찾기"  onclick="zipCheck()"></td>
 				</tr>
 			</table>
 		</td>
