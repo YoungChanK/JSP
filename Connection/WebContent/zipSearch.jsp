@@ -1,13 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ page import="mem.ZipcodeBean" %>
+<%@ page import="mem.zipcodeBean" %>
 <%@ page import="java.util.Vector" %>
 <%
 	request.setCharacterEncoding("UTF-8");
 	String check = request.getParameter("search");
 	String area3=null;
 	/* Vector는 ArrayList와 같은 구성 */
-	Vector<ZipcodeBean> vlist=null;
+	Vector<zipcodeBean> vlist=null;
 	
 	if(check.equals("y")){
 		//요청한 area3 값의 매개변수 MemberMgr 클래스의 zipcodeRead()메소드를 호출하며 반환되는 값을 Vector 타입의 Vlist로 반환받는다.
@@ -70,7 +70,7 @@ function sendAdd(zipcode,adds){
 		</tr>
 		<%
 			for(int i=0; i<vlist.size();i++){
-				ZipcodeBean bean=vlist.get(i);
+				zipcodeBean bean=vlist.get(i);
 				String rZipcode =bean.getZipcode();
 				String rArea1 = bean.getArea1();
 				String rArea2 = bean.getArea2();
