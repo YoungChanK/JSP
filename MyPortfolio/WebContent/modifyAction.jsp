@@ -32,8 +32,7 @@ if(num==-1) {
 	obj.println("alert('실패')");
 	obj.println("</scrit>");
 }
-
-  */
+*/
  	if(user.getUserPW()==null ||user.getUserName() ==null ||user.getUserGender()==null ||user.getUserEmail()==null){
  		 PrintWriter script = response.getWriter();
  		   script.println("<script>");

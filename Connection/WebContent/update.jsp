@@ -4,22 +4,11 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>회원가입</title>
+<title>정보수정</title>
 <link href = "css/style.css" rel="stylesheet" type ="text/css">
 <script type ="text/javascript" src="js/script.js"></script>
 <script type ="text/javascript">
 
-
-function idCheck(id) {
-	  frm = document.regFrm;
-	  if (id == "") {
-	   alert("아이디를 입력해 주세요.");
-	   frm.id.focus();
-	   return;
-	  }
-	  url = "idCheck.jsp?id=" + id;
-	  window.open(url, "IDCheck", "width=300,height=150");
-	 }
 
 	 function zipSearch() {
 	  url = "zipSearch.jsp?search=n";
@@ -30,25 +19,33 @@ function idCheck(id) {
 </head>
 <!-- 페이지 로딩 및 새로 고침이 발새하면 포커스가 id 입력칸으로 위치 -->
 <body bgcolor="#FFFFCC" onload="regFrm.id.focus()">
+<%
+/* 세션값받기 */
+	String id=null;
+if(session.getAttribute("id") !=null){
+	 id=(String) session.getAttribute("id");
+}
+
+%>
 <div align ="center" >
 <br><br>
-<form name="regFrm" method="post" action="memberProc.jsp">
-<table align ="center" border="0" cellSpacing ="0" cellpadding="5">
+<form name="regFrm" method="post" action="updateProc.jsp">
+<table align="center" border="0" cellSpacing ="0" cellpadding="5">
 	<tr>
 		<td align="center" valign="middle" bgcolor="#ffffcc">
 			<table border="1" cellSpacing ="0" cellpadding="2" align="center" width="600">
 				<tr align="center" bgcolor="#996600">
 					<td colspan="3">
 						<font color="#ffffff">
-							<b>회원가입</b>
+							<b>정보 수정</b>
 						</font>
 					</td>
 				</tr>
 				<tr>
 					<td width ="20%">아이디</td>
 					<td width = "50%">
-						<input name ="id" size="15">
-						<input type="button" value="ID중복확인" onClick="idCheck(this.form.id.value)"></td>
+						<input name ="id"placeholder="<%=id %>" size="15" readonly>
+						<input type="hidden" value="ID중복확인" onClick="idCheck(this.form.id.value)"></td>
 					<td width="30%">아이디를 적어 주세요.</td>
 				</tr>
 				<tr>
@@ -124,9 +121,9 @@ function idCheck(id) {
 					<td>직업을 선택하세요</td>
 				</tr>
 				<tr>
-					<td colspan="3" align="center"><input type="button" value="회원가입" onclick="inputCheck()">&nbsp;&nbsp;
+					<td colspan="3" align="center">
 						<input type="reset" value="다시쓰기">&nbsp;&nbsp;
-						<input type="button" value="로그인" onclick="javascrot:location.href='login.jsp'">
+						<input type="submit"  value="수정" />
 					</td>
 				</tr>
 			</table>

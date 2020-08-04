@@ -80,8 +80,11 @@ public class UserDAO {
   		return -1;
   	}
 
-
   	
+  	//정보수정하는 메소드 생성 
+  	//수정할 필드의 값을 받아오기 
+  	//SQL문 만들고 DB접속후 삽입
+  	//실패시 -1반환
 	public int modify(String userID, String userPW, String userName, String userEmail , String userGender) {
   		String SQL = "UPDATE USER SET USERPW = ?,USERName = ?,USERGender = ?,USEREmail = ? WHERE USERID =?";
   		

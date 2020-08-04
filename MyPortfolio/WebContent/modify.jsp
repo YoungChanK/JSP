@@ -16,8 +16,13 @@ if(session.getAttribute("userID") !=null){
 	 userID=(String) session.getAttribute("userID");
 }
 
+/* userDAO 에서 modify() 메소드 생성
+modify 화면 생성해서 ID세션값 받기
+post로 modifyAction.jsp에 값 보내기
+modifyAction.jsp에서 userDAO에 있는 modify() 메소드에 값넣어서 쿼리문 실행
+데이터베이스 문제시 -1 
 
-
+ */
 
 %>
 <nav class="navbar navbar-default">
@@ -51,7 +56,10 @@ if(session.getAttribute("userID") !=null){
   <div class="jumbotron" style="padding-top:20px;">
    <form method="post" action="modifyAction.jsp?id=<%=userID%>">
     <h3 style="text-align:center;">회원정보수정</h3>
-    	id=<%=userID %>
+   
+    <div class="form-group">
+     <input type="text" class="form-control" placeholder="<%=userID %>" name="userId" maxlength="20" readonly/>
+    </div>
     <div class="form-group">
      <input type="password" class="form-control" placeholder="비밀번호" name="userPW" maxlength="20" />
     </div>

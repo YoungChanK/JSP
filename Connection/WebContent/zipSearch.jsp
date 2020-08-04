@@ -1,25 +1,26 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ page import="mem.zipcodeBean" %>
+<%@ page import="mem.ZipcodeBean" %>
 <%@ page import="java.util.Vector" %>
+<jsp:useBean id='mMgr' class ="mem.MemberMgr"/>
 <%
 	request.setCharacterEncoding("UTF-8");
-	String check = request.getParameter("search");
+	String search = request.getParameter("search");
 	String area3=null;
 	/* Vector는 ArrayList와 같은 구성 */
-	Vector<zipcodeBean> vlist=null;
+	Vector<ZipcodeBean> vlist=null;
 	
-	if(check.equals("y")){
+	if(search.equals("y")){
 		//요청한 area3 값의 매개변수 MemberMgr 클래스의 zipcodeRead()메소드를 호출하며 반환되는 값을 Vector 타입의 Vlist로 반환받는다.
 		area3 =request.getParameter("area3");
-		vlist = mMgr.zipcodeRead(area3);
+		vlist = mMgr.ZipCodeRead(area3);
 	}
 %>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>우편번호 검색</title>
 <link href = "css/style.css" rel="stylesheet" type ="text/css">
 <script type="text/javascript">
 
@@ -37,6 +38,7 @@ function loadSearch(){
 function sendAdd(zipcode,adds){
 		opener.document.regFrm.zipcode.value=zipcode;
 		opener.document.regFrm.address.value=adds;
+		//두 값이 인풋태그 안으로 들어가면서 서치창은 자동적으로 닫기게 된다.
 		self.close();
 }
 </script>
@@ -48,8 +50,9 @@ function sendAdd(zipcode,adds){
 <form name ="zipFrm" method="post">
 	<table>
 		<tr>
-			<td><br>도로명 입력 : <input name ="area">
-			<input type="button" value ="검색" onclick="loadSearch();">
+			<td><br>도로명 입력 : <input name ="area3">
+			<!--버튼을 클릭하게 되면 zipSearch.jsp 가 열림 -->
+			<input type="button" value ="검색" onclick="loadSearch()">
 			</td>
 		</tr>
 		<!--검색결과 시작  -->
@@ -70,7 +73,7 @@ function sendAdd(zipcode,adds){
 		</tr>
 		<%
 			for(int i=0; i<vlist.size();i++){
-				zipcodeBean bean=vlist.get(i);
+				ZipcodeBean bean=vlist.get(i);
 				String rZipcode =bean.getZipcode();
 				String rArea1 = bean.getArea1();
 				String rArea2 = bean.getArea2();
@@ -79,7 +82,7 @@ function sendAdd(zipcode,adds){
 			
 		%>
 		<tr>
-			<td><a href="#" onclick="javascript:sendAdd('<%=rZipcode%>','<%=adds %>')"<%=rZipcode %><%=adds %>></a></td>
+			<td><a href="#" onclick="javascript:sendAdd('<%=rZipcode%>','<%=adds %>')"><%=rZipcode %><%=adds %></a></td>
 		</tr>
 		<%
 				}

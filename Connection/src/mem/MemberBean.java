@@ -1,6 +1,6 @@
 package mem;
 
-public class memberBean {
+public class MemberBean {
 	private String id;
 	private String pwd;
 	private String name;
@@ -9,6 +9,13 @@ public class memberBean {
 	private String birthday;
 	private String zipcode;
 	private String address;
+	private String job;
+	public String getJob() {
+		return job;
+	}
+	public void setJob(String job) {
+		this.job = job;
+	}
 	public String getId() {
 		return id;
 	}

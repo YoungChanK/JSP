@@ -1,10 +1,10 @@
 package mem;
 
-public class zipcodeBean {
+public class ZipcodeBean {
 	private String zipcode;
-	private String area1;
-	private String area2;
-	private String area3;
+	private String Area1;
+	private String Area2;
+	private String Area3;
 	public String getZipcode() {
 		return zipcode;
 	}
@@ -12,24 +12,24 @@ public class zipcodeBean {
 		this.zipcode = zipcode;
 	}
 	public String getArea1() {
-		return area1;
+		return Area1;
 	}
 	public void setArea1(String area1) {
-		this.area1 = area1;
+		Area1 = area1;
 	}
 	public String getArea2() {
-		return area2;
+		return Area2;
 	}
 	public void setArea2(String area2) {
-		this.area2 = area2;
+		Area2 = area2;
 	}
 	public String getArea3() {
-		return area3;
+		return Area3;
 	}
 	public void setArea3(String area3) {
-		this.area3 = area3;
+		Area3 = area3;
 	}
-	
+
 	
 	
 }
