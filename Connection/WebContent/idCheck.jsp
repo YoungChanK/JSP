@@ -14,7 +14,7 @@
 <title>Insert title here</title>
 <link href="css/style.css" rel="stylesheet" type="text/css">
 </head>
-<body bgcolor="#ffffcc">
+<body bgcolor="#f7f9fa">
  <div align="center">
   <br><b><%=id %></b>
   <%

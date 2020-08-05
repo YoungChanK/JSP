@@ -2,24 +2,101 @@ BODY {
 	FONT-SIZE: 9pt; COLOR: black; LINE-HEIGHT: 160%; FONT-FAMILY: ±¼¸²,verdana,tahoma
 }
 TD {
-	FONT-SIZE: 9pt; COLOR: black; LINE-HEIGHT: 160%; FONT-FAMILY: ±¼¸²,verdana,tahoma
+	FONT-SIZE: 15pt; COLOR: black; LINE-HEIGHT: 160%; FONT-FAMILY: ±¼¸²,verdana,tahoma; border:none; text-indent:20px;
 }
 SELECT {
 	FONT-SIZE: 9pt; COLOR: black; LINE-HEIGHT: 160%; FONT-FAMILY: ±¼¸²,verdana,tahoma
 }
 DIV {
-	FONT-SIZE: 9pt; COLOR: black; LINE-HEIGHT: 160%; FONT-FAMILY: ±¼¸²,verdana,tahoma
+	FONT-SIZE: 9pt; COLOR: black; LINE-HEIGHT: 160%; FONT-FAMILY: ±¼¸²,verdana,tahoma;
+	padding-bottom:200px;
 }
 FORM {
 	FONT-SIZE: 9pt; COLOR: black; LINE-HEIGHT: 160%; FONT-FAMILY: ±¼¸²,verdana,tahoma
 }
 TEXTAREA {
-	BORDER-RIGHT: 1px solid #999999; BORDER-TOP: 1px solid #999999; FONT-SIZE: 9pt; BORDER-LEFT: 1px solid #999999 ; COLOR: BLACK; BORDER-BOTTOM: 1px solid #999999; FONT-FAMILY: ±¼¸²,verdana; BACKGROUND-COLOR: white
+	BORDER-RIGHT: 1px solid #999999; BORDER-TOP: 1px solid #999999; 
+	FONT-SIZE: 9pt; BORDER-LEFT: 1px solid #999999 ; COLOR: BLACK; BORDER-BOTTOM: 1px solid #999999; 
+	FONT-FAMILY: ±¼¸²,verdana; BACKGROUND-COLOR: white;
 }
 INPUT {
-	BORDER-RIGHT: 1px solid #999999; BORDER-TOP: 1px solid #999999; FONT-SIZE: 9pt; BORDER-LEFT: 1px solid #999999; COLOR: BLACK; BORDER-BOTTOM: 1px solid #999999; FONT-FAMILY: ±¼¸²,verdana; HEIGHT: 19px; BACKGROUND-COLOR: white
+	BORDER-RIGHT: 1px solid #999999; BORDER-TOP: 1px solid #999999;
+	FONT-SIZE: 9pt; BORDER-LEFT: 1px solid #999999; COLOR: BLACK; BORDER-BOTTOM: 1px solid #999999;
+	FONT-FAMILY: ±¼¸²,verdana; HEIGHT: 19px; BACKGROUND-COLOR: white; margin-left:20px; height:20px;
+	border-radius: 6px;
 }
 
 A:link {text-decoration:none;color:#696969}
 A:hover{text-decoration:yes;color:#66CCFF}
 A:visited {text-decoration:none;color:#330066}
+table{
+	border :0px;
+	border-radius:50%;
+}
+p{
+	font-size:18px;
+}
+
+#tr1{
+		height:100px;
+		padding-buttom:200px;
+		
+}
+b{
+	font-size:30px;
+}
+td#lasttd input{
+	background: #000;
+    color: white;
+   
+    height:50px;
+    width: 100px;
+}
+
+
+
+/* ·Î±×ÀÎÆû */
+
+#logintd{
+	color : black;
+	text-align:center;
+	text-indent:0px;
+}
+#logintd>font>b{
+	color : black;
+}
+#logindiv{
+	margin-top:200px;
+}
+td>div{
+	padding:0px;
+	text-align:center;
+}
+td>div input{
+		background: #000;
+    color: white;
+    height:50px;
+    width: 100px;
+}
+.logintr>td>input{
+	margin-right:30px;
+	margin-bottom:10px;
+	
+}
+#genderflex{
+	display:flex;
+}
+#genderflex input{
+	margin-top:25px;
+}
+/* zipSearch */
+#zipSearchTable tbody tr td{
+	border:none;
+}
+#Zipbtn{
+	background: #000;
+    color: white;
+    font-family: 'Stylish', sans-serif;
+    height:30px;
+    width: 100px;
+}

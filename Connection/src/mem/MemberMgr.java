@@ -161,7 +161,7 @@ public class MemberMgr {
 			pool.freeConnection(conn,pstmt,rs);
 		}
 		
-		return true;
+		return flag;
 	}
 	//정보수정
 	public boolean updateMember(MemberBean bean) {
@@ -171,35 +171,33 @@ public class MemberMgr {
 		ResultSet rs = null;
 		String sql = null;
 		boolean flag = false;
-		
+		int count;
 		try {
 			conn = pool.getConnection();
-			sql="update tblMember set pwd=?,name=?,gender=?,birthday=?,email=?,zipcode=?,address=?,hobby=?,job=? where id= ?";
+			sql="update tblMember set pwd=?,name=?,gender=?,email=?,birthday=?,zipcode=?,address=?,hobby=?,job=? where id= ?";
 			pstmt =conn.prepareStatement(sql);
 			pstmt.setString(1, bean.getPwd());
 			pstmt.setString(2, bean.getName());
 			pstmt.setString(3, bean.getGender());
-			pstmt.setString(4, bean.getBirthday());
-			pstmt.setString(5, bean.getEmail());
+			pstmt.setString(4, bean.getEmail());
+			pstmt.setString(5, bean.getBirthday());
 			pstmt.setString(6, bean.getZipcode());
 			pstmt.setString(7, bean.getAddress());
 			String hobby[]=bean.getHobby();
-			//db에 저장할 hb배열을 0으로 초기화
 			char hb[] = {'0','0','0','0','0'};
 			String lists[]= {"인터넷","여행","게임","영화","운동"};
 				for(int i =0;i<hobby.length;i++) {
 					for(int j=0;j<lists.length;j++) {
 						if(hobby[i].equals(lists[j])) {
-							//SQL 결과값이 저장된 hobby[]배열의 값과 lists[]배열의 값이 같은지를 비교
-							//같으면 체크가 된 것이므로 처음 '0'으로 초기화 된 hb[]배열의 hb[j]값을 '1'로 저장하게 된다
 							hb[j]='1';
 						}
 					}
 				}
 				pstmt.setString(8, new String(hb));
 				pstmt.setString(9, bean.getJob());
-				pstmt.setString(10,bean.getId());				
-				if(pstmt.executeUpdate()==1)
+				pstmt.setString(10,bean.getId());	
+				count = pstmt.executeUpdate();
+				if(count>0)
 					flag=true;
 		} catch (Exception e) {
 			e.printStackTrace();

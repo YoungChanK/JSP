@@ -12,6 +12,12 @@
  	String mag= "정보수정에 실패 했습니다.";
  	String location = "member.jsp";
  	if(result){
+ %>
+ <%
+//세션종료
+session.invalidate();
+%>
+<% 
  		mag = "정보수정을 하였습니다. 다시 로그인 해주세요";
  		location = "login.jsp";
  	}

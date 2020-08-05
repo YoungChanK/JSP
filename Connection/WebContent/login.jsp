@@ -30,8 +30,8 @@
 
 </script>
 </head>
-<body bgcolor="#ffffcc">
-	<div align="center">
+<body bgcolor="#f7f9fa">
+	<div id="logindiv" align="center">
 		<br>
 		<br>
 		<%if (id !=null){ %>
@@ -43,11 +43,18 @@
 		<form name="loginFrm" method="post" action="LoginProc.jsp">
 		<table>
 			<tr>
-				<td>아 이 디</td>
+				<td id="logintd" colspan ="2">
+					<font color="#ffffff">
+							<b>로 그 인</b>
+						</font>
+				</td>
+			</tr>
+			<tr class="logintr">
+				<td><p>아 이 디</p></td>
 				<td><input type ="text" name ="id"></td>
 			</tr>
-			<tr>
-				<td>비밀번호</td>
+			<tr class="logintr">
+				<td><p>비밀번호</p></td>
 				<td><input type ="password" name ="pwd"></td>
 			</tr>
 			<tr>

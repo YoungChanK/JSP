@@ -22,6 +22,7 @@
 <meta charset="UTF-8">
 <title>우편번호 검색</title>
 <link href = "css/style.css" rel="stylesheet" type ="text/css">
+<link href="https://fonts.googleapis.com/css2?family=Stylish&display=swap" rel="stylesheet">
 <script type="text/javascript">
 
 function loadSearch(){
@@ -43,17 +44,17 @@ function sendAdd(zipcode,adds){
 }
 </script>
 </head>
-<body bgcolor="#ffffcc">
+<body bgcolor="#f7f9fa">
 
-<div align="center"></div>
+<div align="center">
 <br>
 <form name ="zipFrm" method="post">
-	<table>
+	<table id="zipSearchTable">
 		<tr>
-			<td><br>도로명 입력 : <input name ="area3">
+			<td><br><p>도로명 입력 : <input name ="area3">
 			<!--버튼을 클릭하게 되면 zipSearch.jsp 가 열림 -->
-			<input type="button" value ="검색" onclick="loadSearch()">
-			</td>
+			<input id ="Zipbtn" type="button" value ="검색" onclick="loadSearch()">
+			</p></td>
 		</tr>
 		<!--검색결과 시작  -->
 		<%
@@ -98,5 +99,6 @@ function sendAdd(zipcode,adds){
 		<input type="hidden" name="search" value="y">
 
 </form>
+</div>
 </body>
 </html>

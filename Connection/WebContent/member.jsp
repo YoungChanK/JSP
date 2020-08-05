@@ -6,7 +6,6 @@
 <meta charset="UTF-8">
 <title>회원가입</title>
 <link href = "css/style.css" rel="stylesheet" type ="text/css">
-<script type ="text/javascript" src="js/script.js"></script>
 <script type ="text/javascript">
 
 
@@ -29,82 +28,82 @@ function idCheck(id) {
 
 </head>
 <!-- 페이지 로딩 및 새로 고침이 발새하면 포커스가 id 입력칸으로 위치 -->
-<body bgcolor="#FFFFCC" onload="regFrm.id.focus()">
+<body bgcolor="#f7f9fa" onload="regFrm.id.focus()">
 <div align ="center" >
 <br><br>
 <form name="regFrm" method="post" action="memberProc.jsp">
-<table align ="center" border="0" cellSpacing ="0" cellpadding="5">
+<table id = "tb1" align ="center" border="0" cellSpacing ="0" cellpadding="5">
 	<tr>
-		<td align="center" valign="middle" bgcolor="#ffffcc">
-			<table border="1" cellSpacing ="0" cellpadding="2" align="center" width="600">
-				<tr align="center" bgcolor="#996600">
+		<td align="center" valign="middle" bgcolor="#ffffff">
+			<table id = "tb2" border="1" cellSpacing ="0px" cellpadding="2px" align="center" width="700px">
+				<tr id = "tr1"align="center" bgcolor="#000000">
 					<td colspan="3">
 						<font color="#ffffff">
-							<b>회원가입</b>
+							<b>회 원 가 입</b>
 						</font>
 					</td>
 				</tr>
 				<tr>
-					<td width ="20%">아이디</td>
-					<td width = "50%">
-						<input name ="id" size="15">
+					<td width ="20%"><p>아이디</p></td>
+					<td width = "60%">
+						<input name ="id" size="30">
 						<input type="button" value="ID중복확인" onClick="idCheck(this.form.id.value)"></td>
-					<td width="30%">아이디를 적어 주세요.</td>
+			
 				</tr>
 				<tr>
-					<td>패스워드</td>
-					<td><input type = "password" name ="pwd" size="15"></td>
-					<td>패스워드를 적어주세요</td>
+					<td><p>패스워드</p></td>
+					<td><input type = "password" name ="pwd" size="30"></td>
+					
 				</tr>
 				<tr>
-					<td>패스워드 확인</td>
-					<td><input type = "password" name ="repwd" size="15"></td>
-					<td>패스워드를 확인합니다</td>
+					<td><p>패스워드 확인</p></td>
+					<td><input type = "password" name ="repwd" size="30"></td>
+					
 				</tr>
 				<tr>
-					<td>이름</td>
-					<td><input type = "text" name ="name" size="15"></td>
-					<td>이름을 입력해 주세요</td>
+					<td><p>이름</p></td>
+					<td><input type = "text" name ="name" size="30"></td>
+				
+				</tr>
+				<tr >
+					<td><p>성별</p></td>
+					<td id="genderflex"><p>남자</p><input type = "radio" name ="gender" value="1" checked="checked">
+						<p>여자</p><input type = "radio" name ="gender" value="2"></td>
+			
 				</tr>
 				<tr>
-					<td>성별</td>
-					<td>남<input type = "radio" name ="gender" value="1" checked="checked">
-						여<input type = "radio" name ="gender" value="2"></td>
-					<td>성별을 입력하세요</td>
+					<td><p>생년월일</p></td>
+					<td><input name ="birthday" size="15">&nbsp;&nbsp;ex)931220</td>
+			
 				</tr>
 				<tr>
-					<td>생년월일</td>
-					<td><input name ="birthday" size="6">ex)931220</td>
-					<td>생년월일을 적어주세요</td>
-				</tr>
-				<tr>
-					<td>Email</td>
+					<td><p>Email</p></td>
 					<td><input type="text" name ="email" size="30"></td>
 				</tr>
 				<tr>
-					<td>우편번호</td>
+					<td><p>우편번호</p></td>
 					<td><input type="text" name ="zipcode" size="5" readonly>
 						<input type="button" value="우편번호찾기"  onclick="zipSearch()"></td>
-						<td>우편번호를 검색하세요</td>
+				
 				</tr>
 				<tr>
-					<td>주소</td>
+					<td><p>주소</p></td>
 					<td><input name ="address" size=""></td>
-					<td>주소를 적어주세요</td>
+	
 				</tr>
 				<tr>
-					<td>취미</td>
+					<td><p>취미</p></td>
 					<td>
-						인터넷<input type ="checkbox" name ="hobby"  value="인터넷">
-						여행<input type ="checkbox" name ="hobby"  value="여행">
-						게임<input type ="checkbox" name ="hobby"  value="게임">
-						영화<input type ="checkbox" name ="hobby"  value="영화">
-						운동<input type ="checkbox" name ="hobby"  value="운동">
+						<p>인터넷<input type ="checkbox" name ="hobby"  value="인터넷"></p>
+						<p>여행<input type ="checkbox" name ="hobby"  value="여행"></p>
+						<p>게임<input type ="checkbox" name ="hobby"  value="게임"></p>
+						<p>영화<input type ="checkbox" name ="hobby"  value="영화"></p>
+						<p>운동<input type ="checkbox" name ="hobby"  value="운동"></p>
 					</td>
-					<td>취미를 선택하세요</td>
+				
 				</tr>
 				<tr>
-					<td>직업</td>
+					<td><p>직업</p></td>
 					<td><select name ="job">
 						<option value="0" selected>선택하세요.
 						<option value="회사원">회사원
@@ -121,17 +120,17 @@ function idCheck(id) {
 						<option value="기타">기타
 					</select>
 					</td>
-					<td>직업을 선택하세요</td>
+				
 				</tr>
 				<tr>
-					<td colspan="3" align="center"><input type="button" value="회원가입" onclick="inputCheck()">&nbsp;&nbsp;
+					<td id="lasttd" colspan="3" align="center"><input type="button" value="회원가입" onclick="inputCheck()">&nbsp;&nbsp;
 						<input type="reset" value="다시쓰기">&nbsp;&nbsp;
 						<input type="button" value="로그인" onclick="javascrot:location.href='login.jsp'">
 					</td>
 				</tr>
 			</table>
 		</td>
-	</tr>
+	</tr> 
 </table>
 
 
